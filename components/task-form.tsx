@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import type { Task,TaskStatus } from "@/lib/types";
+import type { Task, TaskStatus } from "@/lib/types";
 import {
   Select,
   SelectContent,
@@ -59,15 +59,18 @@ export function TaskForm({ task, onClose, onSaved }: TaskFormProps) {
         return;
       }
 
-      const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+      const {
+        data: { user },
+        error: userError,
+      } = await supabase.auth.getUser();
       
-      if (sessionError) {
+      if (userError) {
         setError("Failed to verify session");
         setLoading(false);
         return;
       }
 
-      if (!sessionData?.session?.user?.id) {
+      if (!user?.id) {
         setError("Not authenticated. Please log in again.");
         setLoading(false);
         return;
@@ -78,14 +81,15 @@ export function TaskForm({ task, onClose, onSaved }: TaskFormProps) {
         description: description.trim(),
         status,
         due_date: dueDate ? new Date(dueDate).toISOString() : null,
-        user_id: sessionData.session.user.id,
+        user_id: user.id,
       };
 
       if (task) {
         const { error: updateError } = await supabase
           .from("tasks")
           .update(taskData)
-          .eq("id", task.id);
+          .eq("id", task.id)
+          .eq("user_id", user.id);
 
         if (updateError) throw updateError;
       } else {
