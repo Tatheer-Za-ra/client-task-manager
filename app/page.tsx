@@ -54,7 +54,15 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-md w-full text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Task Manager</h1>
+        <div className="mb-4 inline-flex items-center gap-3">
+          <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-600 text-base font-bold text-white shadow-md">
+            CT
+          </span>
+          <h1 className="text-4xl font-bold text-gray-900">
+            Client
+            <span className="text-blue-600"> Task Manager</span>
+          </h1>
+        </div>
 
         <p className="text-gray-600 mb-8">
           Stay organized and productive with our simple task management app

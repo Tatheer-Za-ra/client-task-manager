@@ -1,51 +1,112 @@
 # Client Task Manager
 
-Client Task Manager is a small client-ready task management app built with Next.js, TypeScript, Tailwind CSS, and Supabase. It supports email/password authentication, a protected dashboard, and per-user task data protected by Supabase Row Level Security.
+Client Task Manager is a simple full-stack task management app built mainly to practice a realistic deployment and client handover workflow. The app includes signup, login, a protected dashboard, task CRUD, task filtering, Supabase database storage, and Supabase Row Level Security.
 
-## Project Links
+## Live Demo
 
-- Production URL: https://client-task-manager-omega.vercel.app/
-- GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
-- Supabase Project: https://supabase.com/dashboard/project/ztzhkqzwrjjehocgoigx
+Live Demo: https://client-task-manager-omega.vercel.app/
 
-## Features
+Current Release: v1.0.0
 
-- Public home page with login and signup links
-- Email/password signup, login, logout, password reset, and update password screens
-- Protected dashboard at `/protected`
-- Create, edit, delete, and filter tasks
-- Task fields for title, description, status, due date, and created date
-- User-specific task ownership through `user_id`
-- Supabase RLS policies so users can only access their own task rows
-- GitHub Actions CI for lint and production build checks
-- Vercel-ready deployment workflow
+GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
+
+## Project Focus
+
+This project is intentionally simple at the feature level. The goal was not to build a complex productivity product, but to practice taking a small app from local development to production deployment using real-world workflow practices.
+
+The main focus was:
+
+- Supabase setup
+- Auth and protected routes
+- Database-backed CRUD
+- RLS security
+- Environment variables
+- Lint/build checks
+- GitHub Actions CI
+- Vercel deployment
+- Documentation
+- Client handover
+- Release versioning
+
+## What The App Does
+
+- User can sign up and log in.
+- User can access a protected dashboard.
+- User can create, edit, delete, and filter tasks.
+- Each user only sees their own tasks.
+
+## What This Project Demonstrates
+
+- Full-stack app structure with Next.js App Router
+- Managed backend setup with Supabase
+- Authenticated user flow
+- Protected route handling
+- Row Level Security for user-owned data
+- Production build workflow
+- GitHub Actions CI
+- Vercel deployment
+- Environment variable safety
+- Deployment and handover documentation
 
 ## Tech Stack
 
-- Next.js 16.2.6 with App Router
-- TypeScript
-- Tailwind CSS
-- Supabase Auth
-- Supabase managed PostgreSQL
-- Supabase Row Level Security
-- Vercel
-- GitHub Actions
+| Area | Technology |
+| --- | --- |
+| Frontend | Next.js 16.2.6, TypeScript |
+| Backend Platform | Supabase |
+| Database | Supabase managed PostgreSQL |
+| Auth | Supabase Auth |
+| Security | Supabase Row Level Security |
+| Deployment | Vercel |
+| CI/CD | GitHub Actions |
+| Styling | Tailwind CSS |
+
+## Screenshots
+
+Screenshots should be added manually after capturing the deployed app. Do not use fake screenshots.
+
+![SignUp Page](screenshots/signup.png)
+![Login Page](screenshots/loginpage.png)
+![Dashboard](screenshots/dashboard.png)
+![Task Form](screenshots/taskform.png)
+
+Suggested screenshot files:
+
+- `screenshots/home-page.png`
+- `screenshots/login-page.png`
+- `screenshots/dashboard.png`
+- `screenshots/task-form.png`
+
+## Supabase Database And RLS
+
+The app uses a `tasks` table in Supabase managed PostgreSQL. Each task row belongs to a user through the `user_id` column.
+
+Row Level Security is enabled on `public.tasks`. The policies allow authenticated users to select, insert, update, and delete only rows where `auth.uid() = user_id`.
+
+The full SQL setup is available in [database/schema.sql](database/schema.sql).
+
+## Documentation
+
+- [Deployment Guide](DEPLOYMENT.md)
+- [Client Handover Guide](HANDOVER.md)
+- [Maintenance Guide](MAINTENANCE.md)
+- [Database Schema](database/schema.sql)
 
 ## Local Setup
 
 Install dependencies:
 
 ```bash
-npm ci
+npm install
 ```
 
-Create your local environment file:
+Create a local environment file:
 
 ```bash
 copy .env.example .env.local
 ```
 
-Add your Supabase values to `.env.local`.
+Add your Supabase project values to `.env.local`.
 
 Run the development server:
 
@@ -53,32 +114,33 @@ Run the development server:
 npm run dev
 ```
 
-On Windows PowerShell, use this if script execution blocks `npm`:
+Run checks:
+
+```bash
+npm run lint
+npm run build
+```
+
+On Windows PowerShell, use `npm.cmd` if script execution blocks `npm`:
 
 ```bash
 npm.cmd run dev
+npm.cmd run lint
+npm.cmd run build
 ```
-
-Open `http://localhost:3000`.
 
 ## Environment Variables
 
-The app uses these public Supabase browser variables:
+Required variable names:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 ```
 
-Use values from Supabase Dashboard > Project Settings > API. Keep `.env.local` private and never commit it. Do not use a Supabase `service_role` key in this frontend app.
+Do not commit `.env.local`. Do not use or expose a Supabase `service_role` key in this frontend app.
 
-## Supabase Overview
-
-Supabase provides authentication and the PostgreSQL database. The `tasks` table stores task records and includes a `user_id` column linked to the authenticated user.
-
-Run `database/schema.sql` in the Supabase SQL Editor to create the table, indexes, and RLS policies. RLS must stay enabled so users can only select, insert, update, and delete rows where `auth.uid() = user_id`.
-
-## Available Scripts
+## Available Npm Scripts
 
 ```bash
 npm run dev
@@ -94,25 +156,26 @@ npm run start
 
 ## Deployment Summary
 
-Deployment target is Vercel. Push the project to GitHub, confirm GitHub Actions passes on `main`, import the repository into Vercel, add the Supabase environment variables, and deploy with Vercel's Next.js auto-detection.
+This project is deployed on Vercel. The deployment workflow includes GitHub version control, GitHub Actions CI, Vercel project import, Supabase environment variables, production testing, and release/versioning.
 
-Full deployment steps are in `DEPLOYMENT.md`.
+The project does not use Docker, Kubernetes, Railway, Render, VPS, or container deployment.
 
-## Folder Structure Summary
+## Portfolio Highlight
 
-```text
-client-task-manager/
-|-- app/                       # Next.js App Router pages and auth routes
-|-- components/                # UI, auth, and task components
-|-- lib/                       # Supabase clients, utilities, shared types
-|-- database/schema.sql        # Supabase table and RLS setup
-|-- .github/workflows/ci.yml   # GitHub Actions CI
-|-- .env.example               # Safe environment variable placeholders
-|-- README.md                  # Project overview
-|-- DEPLOYMENT.md              # Vercel deployment guide
-|-- HANDOVER.md                # Client handover guide
-`-- MAINTENANCE.md             # Maintenance guide
-```
+Client Task Manager is a simple full-stack application focused on deployment readiness. It demonstrates authentication, protected routes, database-backed CRUD, Supabase RLS, CI checks, Vercel deployment, documentation, and release/versioning practices.
+
+## Resume Bullet
+
+- Built and deployed a simple full-stack task management app using Next.js, TypeScript, Supabase, and Vercel, focusing on authentication, protected routes, Row Level Security, CI checks, production deployment, and client handover documentation.
+
+## Future Improvements
+
+- Search tasks
+- Due-date reminders
+- Team/workspace support
+- User profile page
+- Admin dashboard
+- Better analytics
 
 ## Common Troubleshooting
 
