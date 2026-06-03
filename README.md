@@ -6,7 +6,7 @@ Client Task Manager is a simple full-stack task management app built mainly to p
 
 GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
 
-Current Release: v1.0.0
+Current Release: v1.1.0
 
 Demo note: email confirmation is disabled for demo convenience. In a real production deployment, email confirmation should be enabled with a custom SMTP provider.
 
