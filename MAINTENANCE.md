@@ -21,8 +21,8 @@ npm run build
 
 - Keep changes small and focused.
 - Reuse existing components and Supabase helpers.
-- Do not bypass RLS.
-- Do not add private keys to frontend code.
+- Keep RLS enabled for user-owned data.
+- Keep private keys out of frontend code.
 - Test as at least one logged-in user.
 - For user data features, test with two users to confirm data separation.
 

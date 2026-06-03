@@ -21,13 +21,6 @@
 8. Delete tasks that are no longer needed.
 9. Log out when finished.
 
-## Demo Account Placeholder
-
-- Demo email: `TODO: add demo email if needed`
-- Demo password: `TODO: share securely, not in GitHub`
-
-Do not store real passwords in this file if the repository is public or shared with people who should not have access.
-
 ## What The Client Can Do
 
 - Use the deployed task manager.
@@ -56,7 +49,7 @@ Ongoing support should be agreed separately after handover.
 - Supabase RLS must stay enabled.
 - Demo auth setting: email confirmation is currently disabled for easier testing. Production recommendation: enable email confirmation and configure custom SMTP.
 - Client account access should belong to the client, not only the developer.
-- Demo passwords should be shared through a secure private channel.
+- Demo credentials, if used, should be shared through a secure private channel.
 
 ## Final Handover Checklist
 

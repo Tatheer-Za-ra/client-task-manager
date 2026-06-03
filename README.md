@@ -64,21 +64,11 @@ The main focus was:
 
 ## Screenshots
 
-Screenshots should be added manually after capturing the deployed app. Do not use fake screenshots.
-
 ![Home Page](screenshots/homepage.png)
 ![Login Page](screenshots/login.png)
 ![SignUp Page](screenshots/signup.png)
 ![Dashboard](screenshots/dashboard.png)
 ![Task Form](screenshots/taskform.png)
-
-Suggested screenshot files:
-
-- `screenshots/homepage.png`
-- `screenshots/login.png`
-- `screenshots/dashboard.png`
-- `screenshots/taskform.png`
-- `screenshots/signup.png`
 
 ## Supabase Database And RLS
 
@@ -141,7 +131,7 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 ```
 
-Do not commit `.env.local`. Do not use or expose a Supabase `service_role` key in this frontend app.
+Keep `.env.local` private and out of version control. Never use or expose a Supabase `service_role` key in this frontend app.
 
 ## Available Npm Scripts
 

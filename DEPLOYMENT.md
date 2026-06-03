@@ -13,7 +13,7 @@ This project does not use Docker, Docker Compose, Kubernetes, Helm, VPS deployme
 ## GitHub Repository Preparation
 
 1. Confirm `.env.local` is not committed.
-2. Confirm `.env.example` contains placeholders only.
+2. Confirm `.env.example` contains sample variable names only.
 3. Confirm `database/schema.sql` is committed.
 4. Confirm `.github/workflows/ci.yml` is committed.
 5. Run checks locally:
@@ -49,7 +49,7 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 ```
 
-Use the production Supabase project values. Do not add a Supabase `service_role` key to Vercel for this frontend app.
+Use the production Supabase project values. Never add a Supabase `service_role` key to Vercel for this frontend app.
 
 ## Vercel Import Steps
 
