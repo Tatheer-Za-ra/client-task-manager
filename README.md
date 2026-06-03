@@ -2,13 +2,11 @@
 
 Client Task Manager is a simple full-stack task management app built mainly to practice a realistic deployment and client handover workflow. The app includes signup, login, a protected dashboard, task CRUD, task filtering, Supabase database storage, and Supabase Row Level Security.
 
-## Live Demo
-
-Live Demo: https://client-task-manager-omega.vercel.app/
-
-Current Release: v1.0.0
+## Release
 
 GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
+
+Current Release: v1.0.0
 
 Demo note: email confirmation is disabled for demo convenience. In a real production deployment, email confirmation should be enabled with a custom SMTP provider.
 
@@ -68,17 +66,19 @@ The main focus was:
 
 Screenshots should be added manually after capturing the deployed app. Do not use fake screenshots.
 
-![Home Page](screenshots/home-page.png)
-![Login Page](screenshots/login-page.png)
+![Home Page](screenshots/homepage.png)
+![Login Page](screenshots/login.png)
+![SignUp Page](screenshots/signup.png)
 ![Dashboard](screenshots/dashboard.png)
-![Task Form](screenshots/task-form.png)
+![Task Form](screenshots/taskform.png)
 
 Suggested screenshot files:
 
-- `screenshots/home-page.png`
-- `screenshots/login-page.png`
+- `screenshots/homepage.png`
+- `screenshots/login.png`
 - `screenshots/dashboard.png`
-- `screenshots/task-form.png`
+- `screenshots/taskform.png`
+- `screenshots/signup.png`
 
 ## Supabase Database And RLS
 
