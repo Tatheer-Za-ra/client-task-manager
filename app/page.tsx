@@ -11,9 +11,15 @@ async function AuthStatus() {
   } = await supabase.auth.getUser();
 
   if (!error && user) {
+    const username = user.user_metadata?.username;
+    const displayName =
+      typeof username === "string" && username.trim()
+        ? username
+        : user.email;
+
     return (
       <div className="text-center space-y-4">
-        <p className="text-xl">Welcome back, {user.email}!</p>
+        <p className="text-xl">Welcome back, {displayName}!</p>
 
         <Link
           href="/protected"

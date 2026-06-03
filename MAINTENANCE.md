@@ -72,6 +72,10 @@ npm run build
 - Review dependency updates, but avoid major upgrades without testing.
 - Confirm `.env.local` and private keys are not committed.
 
+## Production Hardening
+
+- Set up custom SMTP for Supabase Auth emails and re-enable email confirmation.
+
 ## Common Issues
 
 - Production auth redirect fails: update Supabase Auth URL Configuration.

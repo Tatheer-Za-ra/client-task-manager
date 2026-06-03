@@ -75,6 +75,10 @@ Use the production Supabase project values. Do not add a Supabase `service_role`
    - Redirect URL: `https://client-task-manager-omega.vercel.app/auth/confirm`
    - Local redirect URL for development: `http://localhost:3000/auth/confirm`
 
+## Supabase Auth Email Note
+
+For this portfolio demo, email confirmation is disabled to avoid built-in email provider rate limits during testing. For real production, enable email confirmation and configure a custom SMTP provider before public launch.
+
 ## Post-Deployment Testing Checklist
 
 - Home page loads.

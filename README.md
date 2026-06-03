@@ -10,6 +10,8 @@ Current Release: v1.0.0
 
 GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
 
+Demo note: email confirmation is disabled for demo convenience. In a real production deployment, email confirmation should be enabled with a custom SMTP provider.
+
 ## Project Focus
 
 This project is intentionally simple at the feature level. The goal was not to build a complex productivity product, but to practice taking a small app from local development to production deployment using real-world workflow practices.
@@ -31,6 +33,7 @@ The main focus was:
 ## What The App Does
 
 - User can sign up and log in.
+- User can save a username during signup and see it in the home/dashboard greeting.
 - User can access a protected dashboard.
 - User can create, edit, delete, and filter tasks.
 - Each user only sees their own tasks.
@@ -65,10 +68,10 @@ The main focus was:
 
 Screenshots should be added manually after capturing the deployed app. Do not use fake screenshots.
 
-![SignUp Page](screenshots/signup.png)
-![Login Page](screenshots/loginpage.png)
+![Home Page](screenshots/home-page.png)
+![Login Page](screenshots/login-page.png)
 ![Dashboard](screenshots/dashboard.png)
-![Task Form](screenshots/taskform.png)
+![Task Form](screenshots/task-form.png)
 
 Suggested screenshot files:
 

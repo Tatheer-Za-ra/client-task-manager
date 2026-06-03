@@ -54,6 +54,7 @@ Ongoing support should be agreed separately after handover.
 - `.env.local` must never be committed.
 - Supabase `service_role` keys must never be used in frontend code.
 - Supabase RLS must stay enabled.
+- Demo auth setting: email confirmation is currently disabled for easier testing. Production recommendation: enable email confirmation and configure custom SMTP.
 - Client account access should belong to the client, not only the developer.
 - Demo passwords should be shared through a secure private channel.
 
