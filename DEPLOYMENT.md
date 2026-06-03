@@ -4,6 +4,12 @@ Deployment target: Vercel only.
 
 This project does not use Docker, Docker Compose, Kubernetes, Helm, VPS deployment, Railway, Render, or container deployment.
 
+## Project Links
+
+- Production URL: https://client-task-manager-omega.vercel.app/
+- GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
+- Supabase Project: https://supabase.com/dashboard/project/ztzhkqzwrjjehocgoigx
+
 ## GitHub Repository Preparation
 
 1. Confirm `.env.local` is not committed.
@@ -65,8 +71,8 @@ Use the production Supabase project values. Do not add a Supabase `service_role`
 3. Confirm policies exist for select, insert, update, and delete.
 4. Enable email/password authentication.
 5. Add URLs in Authentication > URL Configuration:
-   - Site URL: your Vercel production URL
-   - Redirect URL: `https://your-production-domain.com/auth/confirm`
+   - Site URL: `https://client-task-manager-omega.vercel.app/`
+   - Redirect URL: `https://client-task-manager-omega.vercel.app/auth/confirm`
    - Local redirect URL for development: `http://localhost:3000/auth/confirm`
 
 ## Post-Deployment Testing Checklist

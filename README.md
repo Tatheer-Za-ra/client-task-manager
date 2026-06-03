@@ -2,6 +2,12 @@
 
 Client Task Manager is a small client-ready task management app built with Next.js, TypeScript, Tailwind CSS, and Supabase. It supports email/password authentication, a protected dashboard, and per-user task data protected by Supabase Row Level Security.
 
+## Project Links
+
+- Production URL: https://client-task-manager-omega.vercel.app/
+- GitHub Repo: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
+- Supabase Project: https://supabase.com/dashboard/project/ztzhkqzwrjjehocgoigx
+
 ## Features
 
 - Public home page with login and signup links

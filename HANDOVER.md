@@ -3,9 +3,9 @@
 ## Project Details
 
 - Project name: Client Task Manager
-- Production URL: `TODO: add production URL`
-- GitHub repository: `TODO: add GitHub repo URL`
-- Supabase project: `TODO: add Supabase project name or URL`
+- Production URL: https://client-task-manager-omega.vercel.app/
+- GitHub repository: [Tatheer-Za-ra/client-task-manager](https://github.com/Tatheer-Za-ra/client-task-manager)
+- Supabase project: https://supabase.com/dashboard/project/ztzhkqzwrjjehocgoigx
 - Deployment platform: Vercel
 - Database: Supabase managed PostgreSQL
 
